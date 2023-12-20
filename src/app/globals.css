@@ -19,3 +19,6 @@
   line-height: 1;
   scroll-behavior: smooth;
 }
+body {
+  background-color: black;
+}
