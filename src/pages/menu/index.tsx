@@ -1,26 +1,39 @@
 'use client';
 
-import logo from '../../../public/logo-blizzard.png';
 import Image from 'next/image';
 
 const Menu = () => {
   return (
-    <div className="w-full h-20 absolute flex items-center justify-between border-b-2 border-opacity-10 border-white">
+    <div className="w-full h-20 absolute flex items-center justify-between border-b-2 border-opacity-10 border-white md:h-[96px] xl:justify-evenly">
       <Image
-        className="ml-6 w-auto"
-        src={logo}
+        src="/logo-blizzard.png"
         alt="logo"
         width={70}
         height={32}
+        className="ml-6 md:w-[86px] xl:ml-28"
       />
-      <hr className=" absolute border-b-2 border-sky-500 w-11 mt-[78px]  ml-6" />
+      <hr className=" absolute border-b-2 border-sky-500 w-11 mt-[78px] ml-6 md:mt-[95px] xl:ml-28" />
 
-      <div className="md:flex gap-4 ">
-        <button className="md:flex hidden btn py-[10px] px-6 bg-transparent border text-sm font-medium">
+      <div className="hidden xl:block">
+        <ul className="flex gap-9">
+          <li className="text-white text-sm font-medium after:content-[''] after:border-r-[2px] after:border-b-[2px] after:inline-block after:p-1 after:rotate-45 after:ml-3 after:opacity-70">
+            Jogos
+          </li>
+          <li className="text-white text-sm font-medium after:content-[''] after:border-r-[2px] after:border-b-[2px] after:inline-block after:p-1 after:rotate-45 after:ml-3 after:opacity-70">
+            Esportes
+          </li>
+          <li className="text-white text-sm font-medium">Loja</li>
+          <li className="text-white text-sm font-medium">Notícias</li>
+          <li className="text-white text-sm font-medium">Suporte</li>
+        </ul>
+      </div>
+
+      <div className="md:flex gap-4 mr-16 xl:mr-28">
+        <button className="md:flex hidden btn hover:bg-white hover:text-black py-[10px] px-6 bg-transparent border text-sm font-medium">
           Criar Conta
         </button>
 
-        <button className="md:flex hidden btn gap-2 py-[10px] px-6 items-center mr-16">
+        <button className="hidden btn gap-2 py-[10px] px-6 items-center  md:flex">
           <Image
             src="/icons-page/login.svg"
             alt="Icon Login"
@@ -31,8 +44,8 @@ const Menu = () => {
         </button>
 
         <button
-          className="mr-6 after:content-['']
-         after:block after:w-7 after:h-[2px] after:bg-white after:shadow-2xshadow"
+          className=" after:content-['']
+         after:block after:w-7 after:h-[2px] after:bg-white after:shadow-2xshadow xl:hidden md:ml-6"
         ></button>
       </div>
     </div>

@@ -2,8 +2,6 @@
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
-import logo from '../../../public/logo-blizzard.png';
-
 interface Games {
   name: string;
   category: string;
@@ -26,8 +24,8 @@ const ExclusiveGames = () => {
   }, []);
 
   return (
-    <div className="pt-14 pb-16">
-      <div className="flex items-end justify-between mx-6 mb-14">
+    <div className="pt-14 pb-16 xl:w-[1250px] xl:mx-auto">
+      <div className="flex items-end justify-between mx-2 mb-14">
         <h1 className="text-white text-3xl md:text-[32px] font-bold leading-8">
           Jogos
           <br />
@@ -79,7 +77,7 @@ const ExclusiveGames = () => {
           <div key={key} className="overflow-hidden relative flex-col">
             <div className="flex items-end justify-center mb-5">
               <Image
-                className="rounded-lg w-auto hover:scale-125 md:w-[206px] md:h-[283px]"
+                className="rounded-lg w-auto hover:scale-125 md:w-[206px] md:h-[283px] xl:w-[287px] xl:h-[393px]"
                 quality={100}
                 src={item.image}
                 alt={item.name}
@@ -87,7 +85,7 @@ const ExclusiveGames = () => {
                 height={218}
               />
               <Image
-                className="absolute mb-2"
+                className="absolute mb-2 xl:w-36 xl:h-24"
                 quality={100}
                 src={item.logo}
                 alt={item.name}
@@ -101,10 +99,10 @@ const ExclusiveGames = () => {
             </div>
           </div>
         ))}
-        <div className="flex flex-col gap-4 border-neutral-800 rounded border w-40 h-[208px] justify-center items-center md:w-52 md:h-[283px]">
+        <div className="flex flex-col gap-4 border-neutral-800 rounded border w-40 h-[208px] justify-center items-center md:w-52 md:h-[283px] xl:w-[287px] xl:h-[393px]">
           <Image
             className="w-auto mb-8 md:w-[86px] md:h-10 "
-            src={logo}
+            src="/logo-blizzard.png"
             alt="logo"
             width={86}
             height={40}
