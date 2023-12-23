@@ -8,7 +8,7 @@ const MenuHero = () => {
       <Image
         src={bgD4}
         alt="Background Diablo IV"
-        className="w-full absolute -z-10 object-cover  h-[625px] brightness-75 md:h-[736px] xl:object-fill"
+        className="w-full absolute -z-10 object-cover h-[625px] brightness-75 md:h-[736px] xl:object-top"
       />
       <div className="md:grid md:grid-cols-2 xl:grid-cols-3 xl:w-[1300px] xl:mx-auto">
         <div className="hidden md:grid md:col-start-2 md:row-span-2 justify-end items-end mr-8 mb-16 xl:col-start-3">
@@ -102,7 +102,7 @@ const MenuHero = () => {
           </ul>
         </div>
       </div>
-      <hr className="border-b-[3px] border-sky-500 w-1/2 col-span-2 md:mt-4 xl:mt-[147px] " />
+      <hr className="border-b-[3px] border-sky-500 w-1/2  md:mt-4 xl:mt-[147px]" />
     </>
   );
 };

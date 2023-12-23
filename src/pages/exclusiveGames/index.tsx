@@ -11,6 +11,14 @@ interface Games {
 
 const ExclusiveGames = () => {
   const [array, setArray] = useState<Games[]>([]);
+  const [hover, setHover] = useState<number | null>(null);
+
+  const cardHover = (k: number) => {
+    setHover(k);
+  };
+  const cardHoverLeave = () => {
+    setHover(null);
+  };
 
   useEffect(() => {
     fetch('https://api.brchallenges.com/api/blizzard/games')
@@ -72,33 +80,41 @@ const ExclusiveGames = () => {
           </a>
         </div>
       </div>
-      <div className="flex flex-wrap justify-center gap-4 md:gap-8">
+      <div className="flex flex-wrap justify-center gap-4 md:gap-8  ">
         {array.map((item, key) => (
-          <div key={key} className="overflow-hidden relative flex-col">
-            <div className="flex items-end justify-center mb-5">
+          <div key={key} className=" relative flex-col ">
+            <div className="flex items-end justify-center mb-5 overflow-hidden">
               <Image
-                className="rounded-lg w-auto hover:scale-125 md:w-[206px] md:h-[283px] xl:w-[287px] xl:h-[393px]"
-                quality={100}
+                className={`rounded-lg w-auto  md:w-[206px] md:h-[283px] xl:w-[287px] xl:h-[393px] duration-500 ${
+                  hover === key ? 'scale-125' : ''
+                }`}
                 src={item.image}
                 alt={item.name}
                 width={160}
                 height={218}
               />
+
               <Image
                 className="absolute mb-2 xl:w-36 xl:h-24"
-                quality={100}
                 src={item.logo}
                 alt={item.name}
                 width={82}
                 height={54}
               />
+              <div
+                onMouseOver={() => cardHover(key)}
+                onMouseLeave={cardHoverLeave}
+                className="hover:bg-gradient-to-b hover:from-transparent hover:to-black opacity-70 w-full h-[393px] absolute duration-500"
+              ></div>
             </div>
+
             <div className="hidden md:block text-neutral-200">
               <h2 className="text-base font-semibold">{item.name}</h2>
               <p className="opacity-80 text-sm">{item.category}</p>
             </div>
           </div>
         ))}
+
         <div className="flex flex-col gap-4 border-neutral-800 rounded border w-40 h-[208px] justify-center items-center md:w-52 md:h-[283px] xl:w-[287px] xl:h-[393px]">
           <Image
             className="w-auto mb-8 md:w-[86px] md:h-10 "

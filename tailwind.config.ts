@@ -8,9 +8,6 @@ module.exports = {
   ],
   theme: {
     extend: {
-      screens: {
-        '3xl': '1920px'
-      },
       boxShadow: {
         '2xshadow': '0 8px white,0 -8px white',
         shadowMenu: '0 10px white,0 -10px white'

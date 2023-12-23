@@ -1,0 +1,50 @@
+[
+  {
+    "description": "Diablo II: Resurrected",
+    "image": "/drop-down/diablo2-icon.webp"
+  },
+  {
+    "description": "Overwatch® 2",
+    "image": "/drop-down/overwatch2-icon.webp"
+  },
+  {
+    "description": "World of Warcraft®",
+    "image": "/drop-down/wow-icon.webp"
+  },
+  {
+    "description": "Hearthstone®",
+    "image": "/drop-down/hearthstone-icon.webp"
+  },
+  {
+    "description": "Heroes of the storm®",
+    "image": "/drop-down/hearthstone-icon.webp"
+  },
+  {
+    "description": "Warcraft® III Reforged",
+    "image": "/drop-down/warcraft3-icon.webp"
+  },
+  {
+    "description": "Diablo® IV",
+    "image": "/drop-down/diablo4-icon.webp"
+  },
+  {
+    "description": "Diablo® Immortal",
+    "image": "/drop-down/diablo-icon.webp"
+  },
+  {
+    "description": "Diablo® III",
+    "image": "/drop-down/diablo3-icon.webp"
+  },
+  {
+    "description": "StarCraft® II",
+    "image": "/drop-down/starcraft2-icon.webp"
+  },
+  {
+    "description": "StarCraft® Remastered",
+    "image": "/drop-down/starcraft-icon.webp"
+  },
+  {
+    "description": "Arcade da Blizzard®",
+    "image": "/drop-down/arcade-icon.webp"
+  }
+]
