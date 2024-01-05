@@ -1,8 +1,25 @@
+'use client';
+
 import Image from 'next/image';
 
 import bgD4 from '../../../public/banner-hero/games/diablo-bg.png';
+import { useState } from 'react';
 
 const MenuHero = () => {
+  const [gif, setGif] = useState(
+    '/banner-hero/games/diablo-animation-cover.png'
+  );
+  const [play, setPlay] = useState('/icons-page/play.svg');
+
+  const tradeGif = () => {
+    setGif('/banner-hero/games/diablo-animation.gif');
+    setPlay('/icons-page/play-blue.svg');
+  };
+  const tradeGifLeave = () => {
+    setGif('/banner-hero/games/diablo-animation-cover.png');
+    setPlay('/icons-page/play.svg');
+  };
+
   return (
     <>
       <Image
@@ -10,32 +27,40 @@ const MenuHero = () => {
         alt="Background Diablo IV"
         className="w-full absolute -z-10 object-cover h-[625px] brightness-75 md:h-[736px] xl:object-top"
       />
-      <div className="md:grid md:grid-cols-2 xl:grid-cols-3 xl:w-[1300px] xl:mx-auto">
-        <div className="hidden md:grid md:col-start-2 md:row-span-2 justify-end items-end mr-8 mb-16 xl:col-start-3">
+      <div className="md:grid md:grid-cols-2 xl:grid-cols-3 xl:w-[1300px] xl:mx-auto ">
+        <div className="hidden md:grid md:col-start-2 md:row-span-2 justify-end items-end mr-8 mb-16 xl:col-start-3 ">
           <Image
             src="/banner-hero/games/diablo-logo.png"
             alt="Diablo logo"
             width={280}
             height={154}
-            className="mb-28 xl:mb-0 xl:mt-10"
+            className="mb-28 xl:mb-0 xl:mt-10 "
           />
 
-          <div className="relative hidden md:flex items-center justify-center xl:-m-6">
+          <div
+            onMouseEnter={tradeGif}
+            onMouseLeave={tradeGifLeave}
+            className="relative flex items-center justify-center xl:-m-6 cursor-pointer w-72 h-40"
+          >
             <Image
-              src="/icons-page/play.svg"
+              src={play}
               alt="Icon play"
-              width={51}
-              height={51}
-              className="absolute"
+              width={55}
+              height={55}
+              className={`absolute ${
+                play === '/icons-page/play-blue.svg'
+                  ? 'rounded-full border-4 border-sky-400 border-opacity-60'
+                  : ''
+              }`}
             />
             <Image
-              src="/banner-hero/games/diablo-animation-cover.png"
+              src={gif}
               alt="Gif Diablo"
               width={280}
               height={158}
-              className="rounded"
+              className="rounded h-[158px]"
             />
-            <p className="hidden text-white text-sm font-semibold uppercase absolute -top-7 right-0 xl:block xl:mr-7">
+            <p className="text-white text-sm font-semibold uppercase absolute -top-7 right-0 xl:block xl:mr-7">
               Assista o trailer
             </p>
           </div>
@@ -54,13 +79,14 @@ const MenuHero = () => {
         </div>
 
         <div className="ml-6 mr-12 pb-[82px] md:pb-[70px] xl:grid xl:items-end xl:row-start-1 xl:mr-40">
-          <ul className="flex gap-4 mt-3 xl:flex-col xl:ml-20">
+          <ul className="flex cursor-pointer gap-4 mt-3 xl:flex-col xl:ml-20">
             <li>
               <Image
                 src="/banner-hero/icons/game-1.png"
                 alt="Diablo IV"
                 width={51}
                 height={51}
+                className="hover:scale-125 hover:grayscale-0"
               />
             </li>
             <li>
@@ -69,7 +95,7 @@ const MenuHero = () => {
                 alt="Hearthstone"
                 width={51}
                 height={51}
-                className="grayscale"
+                className="grayscale hover:scale-125 hover:grayscale-0"
               />
             </li>
             <li>
@@ -78,7 +104,7 @@ const MenuHero = () => {
                 alt="World of Warcraft"
                 width={51}
                 height={51}
-                className="grayscale"
+                className="grayscale hover:scale-125 hover:grayscale-0"
               />
             </li>
             <li>
@@ -87,7 +113,7 @@ const MenuHero = () => {
                 alt="Diablo III"
                 width={51}
                 height={51}
-                className="grayscale-[80%] "
+                className="grayscale hover:scale-125 hover:grayscale-0"
               />
             </li>
             <li>
@@ -96,7 +122,7 @@ const MenuHero = () => {
                 alt="StarCraft II"
                 width={51}
                 height={51}
-                className="grayscale"
+                className="grayscale hover:scale-125 hover:grayscale-0"
               />
             </li>
           </ul>

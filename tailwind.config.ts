@@ -9,8 +9,21 @@ module.exports = {
   theme: {
     extend: {
       boxShadow: {
-        '2xshadow': '0 8px white,0 -8px white',
-        shadowMenu: '0 10px white,0 -10px white'
+        '2xshadow': '0 8px white,0 -8px white'
+      },
+      keyframes: {
+        games: {
+          from: { transform: 'translateY(-640px)' },
+          to: { transform: 'translateY(0px)' }
+        },
+        sports: {
+          from: { transform: 'translateY(-520px)' },
+          to: { transform: 'translateY(0px)' }
+        }
+      },
+      animation: {
+        games: 'games 1s ease-in-out',
+        sports: 'sports 1s ease-in-out'
       }
     }
   },

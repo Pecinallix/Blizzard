@@ -1,0 +1,22 @@
+[
+  {
+    "description": "Hearthstone® masters",
+    "image": "/drop-down/hearthstone-league.webp"
+  },
+  {
+    "description": "Campeonato Mundial de Arena WoW®",
+    "image": "/drop-down/wow-league.webp"
+  },
+  {
+    "description": "StarCraft® II WCS",
+    "image": "/drop-down/starcraft-league.webp"
+  },
+  {
+    "description": "Copa Mundial de Overwatch®",
+    "image": "/drop-down/overwatch-cup.webp"
+  },
+  {
+    "description": "Liga de Overwatch®",
+    "image": "/drop-down/overwatch-league.webp"
+  }
+]
