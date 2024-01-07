@@ -80,12 +80,13 @@ const ExclusiveGames = () => {
           </a>
         </div>
       </div>
+
       <div className="flex flex-wrap justify-center gap-4 md:gap-8  ">
         {array.map((item, key) => (
           <div key={key} className=" relative flex-col ">
             <div className="flex items-end justify-center mb-5 overflow-hidden">
               <Image
-                className={`rounded-lg w-auto  md:w-[206px] md:h-[283px] xl:w-[287px] xl:h-[393px] duration-500 ${
+                className={`rounded-lg w-auto md:w-[206px] md:h-[283px] xl:w-[287px] xl:h-[393px] duration-500 ${
                   hover === key ? 'scale-125' : ''
                 }`}
                 src={item.image}
@@ -104,7 +105,7 @@ const ExclusiveGames = () => {
               <div
                 onMouseOver={() => cardHover(key)}
                 onMouseLeave={cardHoverLeave}
-                className="hover:bg-gradient-to-b hover:from-transparent hover:to-black opacity-70 w-full h-[393px] absolute duration-500"
+                className="hover:bg-gradient-to-b hover:from-transparent hover:to-black opacity-70 w-full h-[217px] md:h-[283px] xl:h-[393px] absolute duration-500"
               ></div>
             </div>
 

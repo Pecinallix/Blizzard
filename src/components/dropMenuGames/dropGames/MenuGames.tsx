@@ -3,14 +3,14 @@
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 
-import games from '../dropGames/Games.json';
+import games from './Games.json';
 
 interface MenuGames {
   description: string;
   image: string;
 }
 
-const MenuJogos = () => {
+const MenuGames = () => {
   const [dados, setDados] = useState<MenuGames[]>([]);
   const [hover, setHover] = useState<number | null>(null);
 
@@ -108,4 +108,4 @@ const MenuJogos = () => {
   );
 };
 
-export default MenuJogos;
+export default MenuGames;

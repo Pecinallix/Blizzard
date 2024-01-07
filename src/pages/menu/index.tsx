@@ -3,12 +3,14 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 
-import MenuJogos from 'components/dropMenuGames/dropGames/MenuJogos';
 import MenuSports from 'components/dropMenuGames/dropSports/MenuSports';
+import Modal from 'components/modal/Modal';
+import MenuGames from 'components/dropMenuGames/dropGames/MenuGames';
 
 const Menu: React.FC = () => {
   const [games, setGames] = useState<boolean>(false);
   const [sports, setSports] = useState<boolean>(false);
+  const [modal, setModal] = useState<boolean>(false);
   const menuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -35,10 +37,14 @@ const Menu: React.FC = () => {
     setGames(false);
   };
 
+  const openModal = () => {
+    setModal(!modal);
+  };
+
   return (
     <div ref={menuRef}>
       <div
-        className={`w-full absolute border-b-2 border-opacity-10 border-white md:h-[96px] flex items-center justify-center  ${
+        className={`w-full absolute z-10 border-b-2 border-opacity-10 border-white md:h-[96px] flex items-center justify-center  ${
           games || sports === true
             ? 'xl:bg-black xl:bg-opacity-70 xl:backdrop-blur-sm xl:duration-1000'
             : ''
@@ -86,7 +92,10 @@ const Menu: React.FC = () => {
               Criar Conta
             </button>
 
-            <button className="hidden btn gap-2 py-[10px] px-6 items-center md:flex">
+            <button
+              className="hidden btn gap-2 py-[10px] px-6 items-center md:flex"
+              onClick={openModal}
+            >
               <Image
                 src="/icons-page/login.svg"
                 alt="Icon Login"
@@ -105,7 +114,15 @@ const Menu: React.FC = () => {
         </div>
       </div>
 
-      {games === true ? <MenuJogos /> : sports === true ? <MenuSports /> : null}
+      {games && <MenuGames />}
+      {sports && <MenuSports />}
+      {modal && (
+        <Modal
+          openModal={() => {
+            setModal(!modal);
+          }}
+        />
+      )}
     </div>
   );
 };
