@@ -14,7 +14,9 @@
     "plugin:react/recommended",
     "plugin:prettier/recommended",
     "plugin:react-hooks/recommended",
-    "prettier"
+    "prettier",
+    "plugin:next/recommended",
+    "next/core-web-vitals"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -23,10 +25,9 @@
   },
   "plugins": [
     "@typescript-eslint",
-    "react",
-    "react-hooks",
-    "prettier",
-    "eslint-plugin-import-helpers"
+    "eslint-plugin-import-helpers",
+    "next",
+    "eslint-plugin-react-hooks"
   ],
   "rules": {
     "react-hooks/rules-of-hooks": "error",
@@ -38,11 +39,11 @@
       {
         "newlinesBetween": "always",
         "groups": [
-          ["/^@react", "/^next", "/@next/"],
+          ["/^react/", "/^next/", "/^@next/"],
           "/^public/",
-          "/module/",
-          "/^@shared/",
-          "/absolute/",
+          "/^module/",
+          "/^shared/",
+          "/^absolute/",
           ["parent", "sibling", "index"]
         ],
         "alphabetize": { "order": "asc", "ignoreCase": true }
