@@ -70,10 +70,10 @@ Para facilitar a codificação do projeto foi usado um protótipo do Figma como 
 
 <h1>Desktop Version</h1>
 
-**EM BREVE**
+https://github.com/Pecinallix/Blizzard/assets/104167803/629d8ffb-2e3f-4cb4-8fe6-b4c49d0f1a06
 
 <h1>Mobile Version</h1>
 
-**EM BREVE**
+https://github.com/Pecinallix/Blizzard/assets/104167803/b6cffb68-4f58-41ce-a6fe-8f0d4efb0c45
 
-## 💻 Veja como está o projeto aqui: [Blizzard](**EM BREVE**)
+## 💻 Veja como está o projeto aqui: [Blizzard](https://blizzard-omega.vercel.app/)
